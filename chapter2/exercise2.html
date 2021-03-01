@@ -9,10 +9,16 @@
     <h1>More drawing to canvas</h1>
     <canvas id="asteroids" width="400" height="400"></canvas>
     <script>
-      var canvas = document.getElementById("asteroids");
-      var context = canvas.getContext("2d");
+      let canvas = document.getElementById("asteroids");
+      let context = canvas.getContext("2d");
       // Grid drawing code goes here
       draw_grid(context);
+      context.beginPath();
+      context.strokeStyle = '#ffffff';
+      context.fillStyle = '#00ff00';
+      context.lineWidth = 2;
+      context.moveTo(50, 50);
+
     </script>
   </body>
 </html>

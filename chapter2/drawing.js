@@ -2,7 +2,7 @@ function draw_grid(ctx, minor, major, stroke, fill) {
     minor = minor || 10;
     major = major || minor * 5;
     stroke = stroke || '#00ff00';
-    fill = fill || '#0099000';
+    fill = fill || '#009900';
     ctx.save();
     ctx.strokeStyle = stroke;
     ctx.fillStyle = fill;
