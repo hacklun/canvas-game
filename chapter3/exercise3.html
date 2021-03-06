@@ -11,11 +11,7 @@
     <script>
         let context = document.getElementById('pacmania').getContext('2d');
         draw_grid(context);
-        context.beginPath();
-        context.arc(200, 200, 150, 0.2 * Math.PI, 1.8 * Math.PI);
-        context.lineTo(200, 200);
-        context.fillStyle = 'yellow';
-        context.fill();
+        draw_pacman(context, 100, 100, 50, true);
     </script>
 </body>
 </html>
