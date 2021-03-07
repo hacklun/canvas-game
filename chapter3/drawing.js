@@ -26,15 +26,11 @@ function draw_grid(ctx, minor, major, stroke, fill) {
     ctx.restore();
 }
 
-function draw_pacman(context, x, y, radius, isOpen) {
+function draw_pacman(context, x, y, radius, mouthOpen) {
   context.beginPath();
-  if (isOpen) {
-    context.arc(x, y, radius, 0.2 * Math.PI, 1.8 * Math.PI);
-  } else {
-    context.arc(x, y, radius, 0, 2 * Math.PI);
-  }
+  context.arc(x, y, radius, 0.2 * Math.PI, 1.8 * Math.PI);
   context.lineTo(x, y);
-  context.fillStyle = 'white';
+  context.fillStyle = 'yellow';
   context.fill();
   context.closePath();
   context.stroke();
