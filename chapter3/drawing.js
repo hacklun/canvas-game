@@ -28,7 +28,7 @@ function draw_grid(ctx, minor, major, stroke, fill) {
 
 function draw_pacman(context, x, y, radius, mouthOpen) {
   context.beginPath();
-  context.arc(x, y, radius, 0.2 * Math.PI, 1.8 * Math.PI);
+  context.arc(x, y, radius, 0.2 * Math.PI * mouthOpen, 2 * Math.PI - mouthOpen * 0.2 * Math.PI);
   context.lineTo(x, y);
   context.fillStyle = 'yellow';
   context.fill();
