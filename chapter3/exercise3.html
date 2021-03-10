@@ -11,7 +11,14 @@
     <script>
         let context = document.getElementById('pacmania').getContext('2d');
         draw_grid(context);
-        draw_pacman(context, 200, 200, 150, 0);
+        let min_radius = 5;
+        let max_radius = 50;
+        do {
+            let x = context.canvas.width * Math.random();
+            let y = context.canvas.height * Math.random();
+            let radius = min_radius + (max_radius - min_radius) * Math.random();
+            draw_pacman(context, x, y, radius, Math.random());
+        } while (Math.random() < 0.9);
     </script>
 </body>
 </html>
