@@ -35,3 +35,21 @@ function draw_pacman(context, x, y, radius, mouthOpen) {
   context.closePath();
   context.stroke();
 }
+
+function draw_ship(ctx, x, y, radius, options) {
+    options = options || {};
+    ctx.save();
+    // optionally draw a guide showing the collision radius
+    if (options.guide) {
+        ctx.strokeStyle = 'white';
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
+        ctx.lineWidth = 0.5;
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, 2 * Math.PI);
+        ctx.stroke();
+        ctx.fill();
+    }
+    // set some default values
+    ctx.lineWidth = options.lineWidth || 2;
+
+}
