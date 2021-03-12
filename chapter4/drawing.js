@@ -51,5 +51,22 @@ function draw_ship(ctx, x, y, radius, options) {
     }
     // set some default values
     ctx.lineWidth = options.lineWidth || 2;
-
+    ctx.strokeStyle = options.stroke || 'white';
+    ctx.fillStyle = options.fill || 'black';
+    let angle = (options.angle || 0.5 * Math.PI) / 2;
+    // draw the ship in three lines
+    ctx.beginPath();
+    ctx.moveTo(x + radius, y);
+    ctx.lineTo(
+        x + Math.cos(Math.PI - angle) * radius,
+        y + Math.sin(Math.PI - angle) * radius
+    );
+    ctx.lineTo(
+        x + Math.cos(Math.PI + angle) * radius,
+        y + Math.sin(Math.PI + angle) * radius
+    );
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+    ctx.restore();
 }
